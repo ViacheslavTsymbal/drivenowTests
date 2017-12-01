@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true
+  },
+  "types": [
+  "jasmine",
+  "node",
+  "q",
+  "selenium-webdriver",
+  "protractor"
+],
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "exclude": [
+    "node_modules/"
+  ]
+}
