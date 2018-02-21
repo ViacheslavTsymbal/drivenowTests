@@ -53,7 +53,7 @@ describe('Registration: /fi/helsinki/ with Visa, with business account', functio
 
     it("SQUESTION positive", async function () {
         await regPage.selectSecurityQuestion(2);
-        await expect(regElm.securityQuestion.getAttribute("value")).toEqual("Lempielokuva")
+        await expect(regElm.securityQuestion.getAttribute("value")).toEqual("favorite-movie")
     });
 
     it("SANSWER positive", async function () {
@@ -129,11 +129,7 @@ describe('Registration: /fi/helsinki/ with Visa, with business account', functio
         await regPage.selectMonthOfBirth(regElm.monthFi,12);
         await expect(regElm.monthFi.getAttribute("value")).toEqual('12');
         await regPage.selectYearOfBirth(regElm.yearFi,28);
-        await expect(regElm.yearFi.getAttribute("value")).toEqual('1990');
-
-
-
-
+        await expect(regElm.yearFi.getAttribute("value")).toEqual('1991');
     })
 
     it("DN for business checkbox", async function () {
@@ -184,7 +180,7 @@ describe('Registration: /fi/helsinki/ with Visa, with business account', functio
 
     it("Driving Licence field", async function () {
         await regPage.enterDrivingLicence(regElm.licence_1Fi,"123456qwe89");
-        await expect(regElm.licence_1.getAttribute("value")).toEqual("123456qwe89");
+        await expect(regElm.licence_1Fi.getAttribute("value")).toEqual("123456qwe89");
     });
 
     it("Select DriverLicence Country from drop-down picker", async function () {
@@ -202,18 +198,18 @@ describe('Registration: /fi/helsinki/ with Visa, with business account', functio
     it("DL Valid From field positive",async function () {
         await regPage.licenceValidFrom(regElm.lDayFi,regElm.lMonthFi,regElm.lYearFi,4,9,15);
         await expect(browser.isElementPresent(regElm.dl_validFrom_errorFi)).toEqual(false);
-        await browser.sleep(30000)
     });
 
     it("Should add credit card to Iframe", async function () {
         await regPage.clickNext();
-        await regPage.addCreditCardIframe(4153013999701048,"1229","048");
-        await expect(regElm.payment_highway.getAttribute('value')).toEqual("************1048")
+        await regPage.addCreditCardIframe('4153013999701048','1229','048')
+        await helper.scrollIntoScreenCenter(regElm.payment_highwayFi);
+        await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************1048")
     });
 
     it("should enter promocode", async function () {
         await regPage.validatePromoCodeLogic("DEFAULT");
-        await expect(regElm.regText.getText()).toEqual("Kiitos! Rekisteröitymismaksun määrä on nyt 30 €.")
+        await expect(regElm.regText.getText()).toEqual("Rekisteröidy nyt hintaan 30 €.")
     });
 
     it("Should select GTC checkboxes",async function () {

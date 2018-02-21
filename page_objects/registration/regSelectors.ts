@@ -19,8 +19,8 @@ export class registrationElements  {
 
     //*[@id="dlicNumberExplanation-container"]/span
      cardNumberIframe = element(by.id("cardNumber"));
-     cardValidToIframe = element(by.name("expiry"));
-     cvvIframe = element(by.name("cvv"));
+     cardValidToIframe = element(by.id("expiry"));
+     cvvIframe = element(by.id("cvv"));
      okButtonIframe = element(by.css(".submit-button-text"));
 
 

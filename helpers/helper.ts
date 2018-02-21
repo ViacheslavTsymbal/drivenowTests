@@ -71,6 +71,16 @@ export class Helper {
             await element.click();
     }
 
+    async slowType(elm, keys, delay) {
+        await this.click(elm);
+
+         for (var i =0; i < keys.length;i++) {
+            await browser.actions().sendKeys(keys[i]).perform();
+            await browser.sleep(delay);
+        }
+
+    }
+
 
 
 

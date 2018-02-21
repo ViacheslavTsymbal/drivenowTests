@@ -10,11 +10,11 @@ let conf: Config = {
 
 
 
-      //'../specs/helsinkiFi.js',
+      '../specs/helsinkiFi.js',
       //'../specs/helsinkiEn.js',
 
-      '../specs/lisbonPt.js',
-      '../specs/lisbonEn.js'
+     // '../specs/lisbonPt.js',
+      //'../specs/lisbonEn.js'
 
   ],
   baseUrl: 'https://www.beta.drive-now.com/',
@@ -40,7 +40,7 @@ let conf: Config = {
 
   onPrepare: async () => {
       browser.ignoreSynchronization = true;
-      // browser.driver.manage().window().maximize();
+      browser.driver.manage().window().maximize();
       await browser.get('https://drvnw:drivenow13@www.beta.drive-now.com/').then(function(){
           console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
       });

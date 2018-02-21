@@ -258,14 +258,18 @@ export class RegistrationPageMethods {
        await browser.sleep(300);
     };
 
-    async addCreditCardIframe(number, expDate, cvv){
+    async addCreditCardIframe(number,expDate,cvv){
         await browser.sleep(2000);
         await browser.switchTo().frame(0);
-        await helper.sendKeys(el.cardNumberIframe,number);
-        await helper.sendKeys(el.cardValidToIframe,expDate);
-        await helper.sendKeys(el.cvvIframe,cvv);
+        await helper.slowType(el.cardNumberIframe,number,100);
+        await browser.sleep(500);
+        await helper.slowType(el.cardValidToIframe,expDate,100);
+        await browser.sleep(500);
+        await helper.slowType(el.cvvIframe,cvv,100);
+        await browser.sleep(1000);
         await helper.click(el.okButtonIframe);
         await browser.switchTo().defaultContent()
+        await browser.sleep(2000)
     };
 
     async chooseCreditCard(card){
@@ -311,6 +315,9 @@ export class RegistrationPageMethods {
         await browser.sleep(300)
 
     };
+
+
+
 
 
 

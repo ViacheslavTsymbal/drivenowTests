@@ -8,13 +8,13 @@
     "tscw": "tsc -w"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.38",
-    "@types/node": "^7.0.0",
-    "jasmine-protractor-matchers": "^1.0.1",
-    "jasmine2-reporter": "^0.3.0",
-    "jasmine-reporters": "^2.2.1",
-    "protractor": "^5.1.1",
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^9.4.6",
+    "jasmine-protractor-matchers": "^2.0.0",
+    "jasmine-reporters": "^2.3.0",
+    "jasmine2-reporter": "^1.0.1",
+    "protractor": "^5.3.0",
     "protractor-element-extend": "^2.0.1",
-    "typescript": "^2.2.2"
+    "typescript": "^2.7.1"
   }
 }
