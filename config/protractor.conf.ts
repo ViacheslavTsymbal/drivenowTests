@@ -13,7 +13,7 @@ let conf: Config = {
       '../specs/helsinkiFi.js',
       //'../specs/helsinkiEn.js',
 
-     // '../specs/lisbonPt.js',
+      '../specs/lisbonPt.js',
       //'../specs/lisbonEn.js'
 
   ],
@@ -44,7 +44,6 @@ let conf: Config = {
       await browser.get('https://drvnw:drivenow13@www.beta.drive-now.com/').then(function(){
           console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
       });
-      //await (browser.manage() as any).addCookie({name:"enabledFeatures", value: "{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22viaverdeButton%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}"});
 
 
 

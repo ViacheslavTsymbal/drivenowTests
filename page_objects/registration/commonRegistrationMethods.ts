@@ -269,7 +269,7 @@ export class RegistrationPageMethods {
         await browser.sleep(1000);
         await helper.click(el.okButtonIframe);
         await browser.switchTo().defaultContent()
-        await browser.sleep(2000)
+        await browser.sleep(3000)
     };
 
     async chooseCreditCard(card){

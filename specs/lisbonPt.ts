@@ -25,7 +25,7 @@ describe('Registration: /pt/lisbon/', function () {
 
     it("EMAIL negative", async function () {
         await regPage.enterInvalidEmail();
-        await expect(regElm.email_error.getText()).toEqual("O seu endereço de e-mail serve como login na Área de Cliente.")
+        await expect(regElm.email_error.getText()).toEqual("Registe-se agora por 10 € com 30 minutos de bónus.")
     });
 
     it("EMAIL positive", async function () {
@@ -35,7 +35,7 @@ describe('Registration: /pt/lisbon/', function () {
 
     it("PASSWORD negative", async function () {
         await regPage.enterInvalidPassword();
-        await expect(regElm.password_error.getText()).toEqual("Por favor coloque uma password válida")
+        await expect(regElm.password_error.getText()).toEqual("Por favor insira um endereço de e-mail válido")
     });
 
     it("PASSWORD positive", async function () {
@@ -111,7 +111,7 @@ describe('Registration: /pt/lisbon/', function () {
         await pt.selectMonthOfBirth(12);
         await expect(pt.month.getAttribute("value")).toEqual('12');
         await pt.selectYearOfBirth(28);
-        await expect(pt.year.getAttribute("value")).toEqual('1990');
+        await expect(pt.year.getAttribute("value")).toEqual('1991');
 
 
 
