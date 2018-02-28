@@ -128,7 +128,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
         await regPage.selectMonthOfBirth(regElm.monthFi,12);
         await expect(regElm.monthFi.getAttribute("value")).toEqual('12');
         await regPage.selectYearOfBirth(regElm.yearFi,28);
-        await expect(regElm.yearFi.getAttribute("value")).toEqual('1990');
+        await expect(regElm.yearFi.getAttribute("value")).toEqual('1991');
 
     });
 
@@ -165,7 +165,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
     });
 
     it("Select Company Country from dropdown", async function () {
-        await regPage.selectCompanyCountry(regElm.business_country_dropdownFi,1);
+        await regPage.selectCompanyCountry(regElm.business_country_dropdownFi,0);
         await expect(regElm.business_country_dropdownFi.getAttribute("value")).toEqual("FI")
     });
 

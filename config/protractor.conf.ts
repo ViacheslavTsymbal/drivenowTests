@@ -10,10 +10,10 @@ let conf: Config = {
 
 
 
-      '../specs/helsinkiFi.js',
-      //'../specs/helsinkiEn.js',
+      //'../specs/helsinkiFi.js',
+      '../specs/helsinkiEn.js',
 
-     // '../specs/lisbonPt.js',
+      //'../specs/lisbonPt.js',
       //'../specs/lisbonEn.js'
 
   ],
