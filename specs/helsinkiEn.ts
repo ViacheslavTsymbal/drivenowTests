@@ -10,7 +10,6 @@ declare let expect:any;
 describe('New schema - Registration: /en/helsinki/ with MasterCard, with business account', function () {
     beforeAll(async function () {
         await browser.get("/en/helsinki/registration/1");
-        //await (browser.manage() as any).addCookie({name:"enabledFeatures", value: "{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22viaverdeButton%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22newRegistrationFI%22:[%22local%22%2C%22alpha%22]}"});
 
     });
 
@@ -41,7 +40,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
     });
 
     it("PIN negative", async function () {
-        await regPage.enterInvalidPin()
+        await regPage.enterInvalidPin();
         await expect(regElm.pin_error.getText()).toEqual("Enter PIN consisting of 4 digits");
     });
 
@@ -118,7 +117,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
     });
 
     it("Country /Preferred city fields", async function () {
-        await expect(regElm.country_text_FI.getText()).toEqual("Finland")
+        await expect(regElm.country_text_FI.getText()).toEqual("Finland");
         await expect(regElm.city_text_FI.getText()).toEqual("Helsinki")
     });
 
@@ -201,15 +200,15 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
 
     it("Should add credit card to Iframe", async function () {
         await regPage.clickNext();
-        await regPage.addCreditCardIframe(5506900140100107,"1225","048");
-        await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************0107")
-        await expect(regElm.payment_highwayYearFi.getAttribute('value')).toEqual("29")
+        await regPage.addCreditCardIframe('5506900140100107',"1225","048");
+       // await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************0107")
+        await expect(regElm.payment_highwayYearFi.getAttribute('value')).toEqual("25")
 
     });
 
     it("should enter promocode", async function () {
         await regPage.validatePromoCodeLogic("DEFAULT");
-        await expect(regElm.regText.getText()).toEqual("Thank you! The registration fee has been changed to €30.")
+        await expect(regElm.regText.getText()).toEqual("Register now for €30.")
     });
 
     it("Should select GTC checkboxes",async function () {
@@ -219,8 +218,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
     it("Should display confirmation message",async function () {
         await regPage.clickNext();
         await regPage.displayConfirmationText();
-        await expect(regElm.sms1.getText()).toEqual("Welcome to DriveNow")
-        await browser.sleep(40000)
+        await expect(regElm.sms1.getText()).toEqual("Welcome to DriveNow");
     });
 
 

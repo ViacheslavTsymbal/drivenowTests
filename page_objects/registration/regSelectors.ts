@@ -128,7 +128,8 @@ export class registrationElements  {
      business_City_field = element(by.id("secondaryDetails.invoiceCity"));
      business_country_dropdown = element(by.id("secondaryDetails.invoiceCountry"));
      payment_highway = element(by.id("paymentDetails.paymentHighway-card-number"));
-     payment_highwayFi = element(by.id("payment.paymentHighway-card-number"));
+     payment_highwayFi = element(by.name("payment\\.paymentHighway-ca\n" +
+         "rd-number\"]"));
      payment_highwayYearFi = element(by.id("payment.paymentHighway-valid-until-year"));
 
 

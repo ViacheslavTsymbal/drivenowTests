@@ -4,7 +4,7 @@ import { registrationElements } from "./regSelectors";
 
 let el = new registrationElements();
 let helper = new Helper();
-
+let uniqueEmail;
 export class RegistrationPageMethods {
 
     async selectCountry(country) {
@@ -269,7 +269,7 @@ export class RegistrationPageMethods {
         await browser.sleep(1000);
         await helper.click(el.okButtonIframe);
         await browser.switchTo().defaultContent()
-        await browser.sleep(2000)
+
     };
 
     async chooseCreditCard(card){
@@ -313,6 +313,7 @@ export class RegistrationPageMethods {
     async displayConfirmationText(){
         await helper.isDisplayed(el.sms1);
         await browser.sleep(300)
+        await console.log(uniqueEmail)
 
     };
 
