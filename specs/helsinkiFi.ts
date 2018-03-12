@@ -203,8 +203,8 @@ describe('Registration: /fi/helsinki/ with Visa, with business account', functio
     it("Should add credit card to Iframe", async function () {
         await regPage.clickNext();
         await regPage.addCreditCardIframe('4153013999701048','1229','048')
-        await helper.scrollIntoScreenCenter(regElm.payment_highwayFi);
-      //  await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************1048")
+       // await helper.scrollIntoScreenCenter(regElm.payment_highwayFi);
+      // await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************1048")
     });
 
     it("should enter promocode", async function () {

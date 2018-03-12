@@ -201,6 +201,7 @@ describe('New schema - Registration: /en/helsinki/ with MasterCard, with busines
     it("Should add credit card to Iframe", async function () {
         await regPage.clickNext();
         await regPage.addCreditCardIframe('5506900140100107',"1225","048");
+        await helper.isDisplayed(regElm.payment_highwayYearFi);
        // await expect(regElm.payment_highwayFi.getAttribute('value')).toEqual("************0107")
         await expect(regElm.payment_highwayYearFi.getAttribute('value')).toEqual("25")
 
